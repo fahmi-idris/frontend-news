@@ -1,0 +1,233 @@
+html {
+  position: relative;
+  height: 100%; }
+
+.navbar-inverse {
+  background: #384850;
+  border-bottom: none;
+  color: #FFF; }
+  .navbar-inverse .navbar-brand {
+    color: #FFF; }
+
+.navbar-toggle {
+  float: left;
+  margin-left: 10px; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  position: relative;
+  line-height: 1.9em;
+  overflow-x: hidden;
+  min-height: 100%;
+  padding-bottom: 50px; }
+  body .section {
+    min-height: 250px;
+    padding-top: 60px; }
+  body hr {
+    margin-top: 100px;
+    margin-bottom: -60px;
+    padding: 0; }
+  body .fix {
+    position: fixed;
+    top: 65px;
+    right: 50px; }
+  body h1, body h2 {
+    margin-bottom: 20px; }
+  body pre {
+    padding: 20px;
+    margin-bottom: 30px; }
+  body a, body a:hover {
+    color: #00c497; }
+  body blockquote {
+    border-left: 60px solid #00c497;
+    border-top: 1px solid #00c497;
+    border-bottom: 1px solid #00c497;
+    border-right: 1px solid #00c497;
+    margin: 20px 0px 20px; }
+  body code {
+    color: #384850;
+    background-color: #C9F4EA; }
+  body .btn {
+    padding: 7px 20px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+    background: #384850;
+    border: none;
+    margin-right: 25px; }
+  body .btn:hover, body .btn:active {
+    background: #00c497;
+    color: #384850;
+    font-weight: 700; }
+  body .device-picker.active {
+    background: #00c497;
+    color: #384850;
+    font-weight: 700; }
+
+.sidebar, .right-sidebar {
+  width: 235px;
+  position: fixed;
+  top: 51px;
+  left: 0;
+  bottom: 0;
+  color: #000;
+  transition: all 0.2s ease-in-out; }
+  .sidebar a, .right-sidebar a {
+    cursor: pointer; }
+  .sidebar .sidenav-outer, .right-sidebar .sidenav-outer {
+    overflow: auto !important;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden; }
+    .sidebar .sidenav-outer .menu-body.nav, .right-sidebar .sidenav-outer .menu-body.nav {
+      padding-left: 15px;
+      padding-top: 15px;
+      float: none; }
+      .sidebar .sidenav-outer .menu-body.nav > li.active, .right-sidebar .sidenav-outer .menu-body.nav > li.active {
+        border-right: 3px solid #384850; }
+      .sidebar .sidenav-outer .menu-body.nav li, .right-sidebar .sidenav-outer .menu-body.nav li {
+        list-style-type: none;
+        float: none; }
+        .sidebar .sidenav-outer .menu-body.nav li a, .right-sidebar .sidenav-outer .menu-body.nav li a {
+          padding: 5px 10px;
+          font-size: 15px;
+          display: block;
+          transition: all .2s ease-in-out;
+          display: block;
+          color: #000; }
+          .sidebar .sidenav-outer .menu-body.nav li a:focus, .right-sidebar .sidenav-outer .menu-body.nav li a:focus {
+            text-decoration: none; }
+        .sidebar .sidenav-outer .menu-body.nav li .active, .right-sidebar .sidenav-outer .menu-body.nav li .active {
+          border-right: 3px solid #384850; }
+          .sidebar .sidenav-outer .menu-body.nav li .active a, .right-sidebar .sidenav-outer .menu-body.nav li .active a {
+            color: #00c497;
+            background: transparent;
+            font-size: 17px;
+            font-weight: 500; }
+    .sidebar .sidenav-outer .menu-body.right-nav li, .right-sidebar .sidenav-outer .menu-body.right-nav li {
+      display: none; }
+      .sidebar .sidenav-outer .menu-body.right-nav li.active, .right-sidebar .sidenav-outer .menu-body.right-nav li.active {
+        display: block;
+        border-bottom: none; }
+        .sidebar .sidenav-outer .menu-body.right-nav li.active a, .right-sidebar .sidenav-outer .menu-body.right-nav li.active a {
+          background: transparent; }
+          .sidebar .sidenav-outer .menu-body.right-nav li.active a .iphone-img-fix, .right-sidebar .sidenav-outer .menu-body.right-nav li.active a .iphone-img-fix {
+            background: url("../assets/img/iphone.png") no-repeat;
+            padding: 63px 20px 20px 18px;
+            position: fixed;
+            top: 106px;
+            right: 48px;
+            width: 292px; }
+          .sidebar .sidenav-outer .menu-body.right-nav li.active a .android-img-fix, .right-sidebar .sidenav-outer .menu-body.right-nav li.active a .android-img-fix {
+            background: url("../assets/img/android.png") no-repeat;
+            position: fixed;
+            top: 154px;
+            right: 64px;
+            width: 263px; }
+
+.push-footer {
+  right: 400px; }
+
+.right-sidebar {
+  left: auto;
+  right: 0;
+  background: transparent; }
+
+.docs-desc {
+  padding-left: 260px;
+  padding-top: 50px;
+  transition: all 0.2s ease-in-out; }
+  .docs-desc.with-right-sidebar {
+    padding-right: 370px; }
+
+.visible-1200-frame {
+  display: none; }
+  .visible-1200-frame .visible-1200 {
+    display: none; }
+
+@media screen and (max-width: 1340px) {
+  .fix {
+    right: 0 !important; }
+  .img-fix {
+    right: 18px !important; }
+  .iphone-img-fix {
+    position: fixed;
+    top: 107px !important;
+    right: -2px !important; }
+  .android-img-fix {
+    position: fixed;
+    right: 14px !important; } }
+
+@media screen and (max-width: 1200px) {
+  .visible-1200-frame {
+    background: url("../assets/img/iphone.png") no-repeat;
+    display: block;
+    height: 582px;
+    position: relative;
+    margin-left: calc(50% - 142px); }
+    .visible-1200-frame .visible-1200 {
+      display: block;
+      position: absolute;
+      top: 65px;
+      left: 17px;
+      width: 254px;
+      background: repeat; }
+  .docs-desc.with-right-sidebar {
+    padding-right: 30px !important; }
+  .right-sidebar img {
+    display: none; }
+  .fix {
+    display: none; } }
+
+@media screen and (max-width: 768px) {
+  .navbar-header {
+    display: inline-block; }
+    .navbar-header .navbar-toggle {
+      margin-top: 12px;
+      margin-bottom: 4px; }
+    .navbar-header .navbar-brand {
+      color: #FFF;
+      padding: 18px 15px; }
+  .push-right .sidebar {
+    left: 0 !important; }
+    .push-right .sidebar .navbar-nav {
+      margin: 0; }
+  .push-right .docs-desc {
+    margin-left: 235px; }
+  .sidebar {
+    left: -235px; }
+    .sidebar .navbar-nav {
+      margin: 0; }
+  .docs-desc {
+    padding-left: 15px; }
+  .right-sidebar {
+    display: none; }
+  .main-container {
+    margin-left: 0 !important; } }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+  footer p {
+    z-index: 10000; }
+    footer p a.btn {
+      padding: 7px 20px;
+      margin-bottom: 5px;
+      border-radius: 50px;
+      background: #384850;
+      border: none;
+      margin-right: 25px; }
+    footer p a.btn:hover {
+      background: #00c497;
+      color: #384850;
+      font-weight: 700; }
+
+.right-sidebar .sidenav-outer .menu-body.nav > li.active {
+  border-right: none; }
+
+/*# sourceMappingURL=app.css.map */

@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import { Header, Title, Button, Left, Right, Body, Icon } from 'native-base';
+import { Header, Title, Button, Toast, Left, Right, Body, Icon } from 'native-base';
 
 export default class HeaderContent extends Component {
     render() {
         return (
             <Header>
                 <Left>
-                    <Button transparent>
+                    <Button transparent
+                        onPress={()=> Toast.show({
+                        text: 'Hamburger menu is pressed',
+                        position: 'bottom',
+                        buttonText: 'Ok'
+                    })}>
                         <Icon name='menu'/>
                     </Button>
                 </Left>

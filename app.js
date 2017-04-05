@@ -4,7 +4,7 @@ import { Container, Drawer, Tab, Tabs } from 'native-base';
 import ContentCard from './components/contentcard';
 import HeaderContent from './components/header';
 
-export default class MyApps extends Component {
+export default class App extends Component {
     render() {
         return (
             <Container>
@@ -36,5 +36,3 @@ export default class MyApps extends Component {
         );
     }
 }
-
-AppRegistry.registerComponent('MyApps', () => MyApps);

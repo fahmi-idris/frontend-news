@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, Image } from 'react-native';
+import { Text, StyleSheet, Image, TouchableHighlight } from 'react-native';
 import { Container, Content, List, ListItem, Icon, Left, Body } from 'native-base';
+import { Actions } from 'react-native-router-flux';
+
 export default class Sidebar extends Component {
     render() {
         let image = require('../img/image.png');
@@ -38,7 +40,7 @@ export default class Sidebar extends Component {
                             </Left>
                             <Body />
                         </ListItem>
-                        <ListItem>
+                        <ListItem onPress={Actions.setting}>
                             <Left>
                                 <Icon name="settings" style={{ color: '#0A69FE' }} />
                                 <Text style={styles.menu}>Settings</Text>

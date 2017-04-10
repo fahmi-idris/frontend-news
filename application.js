@@ -3,9 +3,16 @@ import { Router, Scene } from 'react-native-router-flux';
 import { Drawer } from 'native-base';
 import App from './app';
 import Detail from './detail';
+import Setting from './setting';
 import Sidebar from './components/sidebar';
+import SplashScreen from 'react-native-splash-screen';
 
 export default class Application extends Component {
+
+    componentDidMount() {
+        SplashScreen.hide();
+    }
+
     constructor(){
         super();
         this.closeDrawer = this.closeDrawer.bind(this);
@@ -28,6 +35,7 @@ export default class Application extends Component {
                     <Scene key="root">
                         <Scene key="app" component={App} initial={true} hideNavBar={true}/>
                         <Scene key="detail" component={Detail} hideNavBar={true}/>
+                        <Scene key="setting" component={Setting} hideNavBar={true}/>
                     </Scene>
                 </Router>
             </Drawer>

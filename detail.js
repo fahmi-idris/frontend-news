@@ -3,7 +3,7 @@ import { AppRegistry, ScrollView, Text, Image, TouchableOpacity } from 'react-na
 import { Container, Thumbnail, Content, H3, List, ListItem, Card, CardItem, Button, Left, Right, Body, Icon, Header, Title, Toast  } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
-export default class App extends Component {
+export default class Detail extends Component {
     render() {
         let image     = require('./img/image.png');
         let thumbnail = require('./img/logo-f.png');

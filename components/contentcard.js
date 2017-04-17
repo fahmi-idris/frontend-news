@@ -87,9 +87,11 @@ export default class ContentCard extends Component {
                 </Content>
             );
         } else {
-            <Content>
-                <Text>Loading</Text>
-            </Content>
+            return (
+                <Content>
+                    <Text>Loading</Text>
+                </Content>
+            );
         }
     }
 }

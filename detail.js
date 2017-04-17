@@ -1,27 +1,17 @@
 import React, { Component } from 'react';
-import { AppRegistry, ScrollView, Text, Image, TouchableOpacity } from 'react-native';
-import { Container, Thumbnail, Content, H3, List, ListItem, Card, CardItem, Button, Left, Right, Body, Icon, Header, Title, Toast  } from 'native-base';
-import { Actions } from 'react-native-router-flux';
+import { ScrollView, Text, Image } from 'react-native';
+import { Container, Thumbnail, Content, H3, List, ListItem, Card, CardItem, Button, Body, Icon, Toast  } from 'native-base';
+
+import Navigator from './components/navigator';
 
 export default class Detail extends Component {
+
     render() {
         let image     = require('./img/image.png');
         let thumbnail = require('./img/logo-f.png');
         return (
             <Container>
-                <Header>
-                    <Left>
-                        <TouchableOpacity
-                            style={{padding: 10}}
-                            onPress={() => Actions.pop()}>
-                        <Icon name="md-arrow-back" style={{ color: '#ffffff' }}/>
-                        </TouchableOpacity>
-                    </Left>
-                    <Body>
-                        <Title>Detail Title</Title>
-                    </Body>
-                    <Right />
-                </Header>
+                <Navigator/>
                 <ScrollView>
                     <Content>
                         <Card>

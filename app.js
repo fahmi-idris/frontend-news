@@ -43,30 +43,19 @@ export default class App extends Component {
                             </Button>
                         </Left>
                         <Body>
-                            <Title>The Next Web</Title>
+                            <Title>Code News</Title>
                         </Body>
                         <Right />
                     </Header>
                     <Tabs>
-                        <Tab heading="React Native">
+                        <Tab heading="Next Web">
                             <ScrollView>
-                                <ContentCard/>
-                                <ContentCard/>
-                                <ContentCard/>
-                                <ContentCard/>
+                                <ContentCard category="nextweb"/>
                             </ScrollView>
                         </Tab>
-                        <Tab heading="Vue JS">
+                        <Tab heading="Recode">
                             <ScrollView>
-                                <ContentCard/>
-                                <ContentCard/>
-                                <ContentCard/>
-                            </ScrollView>
-                        </Tab>
-                        <Tab heading="React">
-                            <ScrollView>
-                                <ContentCard/>
-                                <ContentCard/>
+                                <ContentCard category="recode"/>
                             </ScrollView>
                         </Tab>
                     </Tabs>

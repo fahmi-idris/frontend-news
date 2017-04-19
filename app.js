@@ -50,12 +50,12 @@ export default class App extends Component {
                     <Tabs>
                         <Tab heading="Next Web">
                             <ScrollView>
-                                <ContentCard/>
+                                <ContentCard category="nextweb"/>
                             </ScrollView>
                         </Tab>
                         <Tab heading="Recode">
                             <ScrollView>
-                                <ContentCard/>
+                                <ContentCard category="recode"/>
                             </ScrollView>
                         </Tab>
                     </Tabs>

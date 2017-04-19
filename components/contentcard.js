@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, Image, TouchableHighlight } from 'react-native';
+import { Text, Image, TouchableHighlight, View } from 'react-native';
 import { Thumbnail, Content, H3, Card, CardItem, Button, Left, Right, Body, Icon, Toast } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import moment from 'moment';
@@ -20,78 +20,78 @@ export default class ContentCard extends Component {
     fetchData() {
         let REQUEST_URL = 'https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=67130e96dab745bf91d4a94539a24b01';
 
+        let REQUEST = 'https://newsapi.org/v1/articles?source=recode&sortBy=top&apiKey=67130e96dab745bf91d4a94539a24b01';
+
         fetch(REQUEST_URL)
         .then((response) => response.json())
             .then((responseData) => {
                 this.setState({
-                    data: responseData.articles[0]
+                    data: responseData.articles
             });
         }).done();
     }
 
-    render() {
+    renderList(){
         let thumbnail    = require('../img/logo-f.png');
-        let publishDate  = moment(this.state.data.publishedAt).format('DD MMMM YYYY');
-        let relativeTime = moment(this.state.data.publishedAt, "YYYYMMDD").fromNow();
-        
-        if(this.state.data) {
-            return (
-                <Content>
-                    <Card>
-                        <CardItem>
-                            <Left>
-                                <Thumbnail source={thumbnail} />
-                                <Body>
-                                    <Text>{ this.state.data.author }</Text>
-                                    <Text note>
-                                        { publishDate }
-                                    </Text>
-                                </Body>
-                            </Left>
-                        </CardItem>
-                        <CardItem cardBody>
-                            <TouchableHighlight onPress={Actions.detail}>
-                                <Image style={{width: 320, height: 170}} source={{ uri: this.state.data.urlToImage }}/>
-                            </TouchableHighlight>
-                        </CardItem>
-                        <CardItem>
-                            <H3>{ this.state.data.title }</H3>
-                        </CardItem>
-                        <CardItem content style={{ paddingTop: 0 }}>
-                            <Text>
-                                { this.state.data.description }
-                            </Text>
-                        </CardItem>
-                        <CardItem style={{ justifyContent: 'space-around' }}>
-                            <Button transparent 
-                                onPress={()=> Toast.show({
-                                text: 'Likes button is pressed',
-                                position: 'bottom',
-                                buttonText: 'Ok'
-                            })}>
-                                <Icon active name="thumbs-up" />
-                                <Text>10 Likes</Text>
-                            </Button>
-                            <Button transparent 
+
+        return this.state.data.map((item, index) => (
+            <Content key={index}>
+                <Card>
+                    <CardItem>
+                        <Left>
+                            <Thumbnail source={thumbnail} />
+                            <Body>
+                                <Text>{ item.author }</Text>
+                                <Text note>
+                                    { moment(item.publishedAt).format('DD MMMM YYYY') }
+                                </Text>
+                            </Body>
+                        </Left>
+                    </CardItem>
+                    <CardItem cardBody>
+                        <TouchableHighlight onPress={Actions.detail}>
+                            <Image style={{width: 320, height: 170}} source={{ uri: item.urlToImage }}/>
+                        </TouchableHighlight>
+                    </CardItem>
+                    <CardItem>
+                        <H3>{ item.title }</H3>
+                    </CardItem>
+                    <CardItem content style={{ paddingTop: 0 }}>
+                        <Text>
+                            { item.description }
+                        </Text>
+                    </CardItem>
+                    <CardItem style={{ justifyContent: 'space-around' }}>
+                        <Button transparent 
                             onPress={()=> Toast.show({
-                                text: 'Comments button is pressed',
-                                position: 'bottom',
-                                buttonText: 'Ok'
-                            })}>
-                                <Icon active name="chatbubbles" />
-                                <Text>10 Comments</Text>
-                            </Button>
-                            <Text>{ relativeTime }</Text>
-                        </CardItem>
-                    </Card>
-                </Content>
-            );
-        } else {
-            return (
-                <Content>
-                    <Text>Loading</Text>
-                </Content>
-            );
-        }
+                            text: 'Likes button is pressed',
+                            position: 'bottom',
+                            buttonText: 'Ok'
+                        })}>
+                            <Icon active name="thumbs-up" />
+                            <Text>10 Likes</Text>
+                        </Button>
+                        <Button transparent 
+                        onPress={()=> Toast.show({
+                            text: 'Comments button is pressed',
+                            position: 'bottom',
+                            buttonText: 'Ok'
+                        })}>
+                            <Icon active name="chatbubbles" />
+                            <Text>10 Comments</Text>
+                        </Button>
+                        <Text>{ moment(item.publishedAt, "YYYYMMDD").fromNow() }</Text>
+                    </CardItem>
+                </Card>
+            </Content>
+        ));
+    }
+
+    render() {
+        return(
+            <View>
+                { this.renderList() }
+            </View>
+        );
     }
 }

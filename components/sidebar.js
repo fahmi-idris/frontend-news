@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
-import { Text, StyleSheet, Image, TouchableHighlight } from 'react-native';
+import React, { Component, PropTypes} from 'react';
+import { Text, StyleSheet, Image } from 'react-native';
 import { Container, Content, List, ListItem, Icon, Left, Body } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
 export default class Sidebar extends Component {
+    static contextTypes = {
+        drawer: PropTypes.object.isRequired,
+    };
+
     render() {
         let image = require('../img/image.png');
 
@@ -12,7 +16,7 @@ export default class Sidebar extends Component {
                 <Content style={{ backgroundColor: '#ffffff' }}>
                     <Image style={{width: 260, height: 170}} source={image}/>
                     <List>
-                        <ListItem>
+                        <ListItem onPress={this.context.drawer.close}>
                             <Left>
                                 <Icon name="person" style={{ color: '#0A69FE' }} />
                                 <Text style={styles.menu}>Profile</Text>
@@ -40,7 +44,7 @@ export default class Sidebar extends Component {
                             </Left>
                             <Body />
                         </ListItem>
-                        <ListItem onPress={Actions.setting}>
+                        <ListItem onPress={Actions.setting} onPress={this.context.drawer.close}>
                             <Left>
                                 <Icon name="settings" style={{ color: '#0A69FE' }} />
                                 <Text style={styles.menu}>Settings</Text>

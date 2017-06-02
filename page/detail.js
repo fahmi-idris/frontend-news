@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { ScrollView, Text, Image } from 'react-native';
 import { Container, Thumbnail, Content, H3, List, ListItem, Card, CardItem, Button, Body, Icon, Toast  } from 'native-base';
 
-import Navigator from './components/navigator';
+import Navigator from '../components/navigator';
 
 export default class Detail extends Component {
 
     render() {
-        let image     = require('./img/image.png');
-        let thumbnail = require('./img/logo-f.png');
+        let image     = require('../img/image.png');
+        let thumbnail = require('../img/logo-f.png');
         return (
             <Container>
                 <Navigator/>

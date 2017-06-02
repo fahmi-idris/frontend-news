@@ -3,10 +3,10 @@ import { ScrollView } from 'react-native';
 import { Container, Tab, Tabs, Button, Icon, Header, Title, Left, Right, Body } from 'native-base';
 import Drawer from 'react-native-drawer'
 
-import Sidebar from './components/sidebar';
-import ContentCard from './components/contentcard';
+import Sidebar from '../components/sidebar';
+import ContentCard from '../components/contentcard';
 
-export default class App extends Component {
+export default class Home extends Component {
     constructor(){
         super();
         this.closeControlPanel = this.closeControlPanel.bind(this);

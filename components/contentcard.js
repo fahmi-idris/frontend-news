@@ -20,7 +20,7 @@ export default class ContentCard extends Component {
     }
 
     fetchData() {
-        let REQUEST_URL = 'https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=67130e96dab745bf91d4a94539a24b01';
+        let REQUEST_URL = 'http://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=67130e96dab745bf91d4a94539a24b01';
 
         fetch(REQUEST_URL)
         .then((response) => response.json())
@@ -33,7 +33,7 @@ export default class ContentCard extends Component {
     }
 
     fetchDataRecode() {
-        let REQUEST_URL = 'https://newsapi.org/v1/articles?source=recode&sortBy=top&apiKey=67130e96dab745bf91d4a94539a24b01';
+        let REQUEST_URL = 'http://newsapi.org/v1/articles?source=recode&sortBy=top&apiKey=67130e96dab745bf91d4a94539a24b01';
 
         fetch(REQUEST_URL)
         .then((response) => response.json())

@@ -8,6 +8,16 @@ export default class Sidebar extends Component {
         drawer: PropTypes.object.isRequired,
     };
 
+    goToSetting(){
+        Actions.setting();
+        this.context.drawer.close();
+    }
+
+    logoutFunction(){
+        Actions.login();
+        this.context.drawer.close();
+    }
+
     render() {
         let image = require('../img/image.png');
 
@@ -16,7 +26,7 @@ export default class Sidebar extends Component {
                 <Content style={{ backgroundColor: '#ffffff' }}>
                     <Image style={{width: 260, height: 170}} source={image}/>
                     <List>
-                        <ListItem onPress={this.context.drawer.close}>
+                        <ListItem>
                             <Left>
                                 <Icon name="person" style={{ color: '#0A69FE' }} />
                                 <Text style={styles.menu}>Profile</Text>
@@ -44,14 +54,14 @@ export default class Sidebar extends Component {
                             </Left>
                             <Body />
                         </ListItem>
-                        <ListItem onPress={Actions.setting} onPress={this.context.drawer.close}>
+                        <ListItem onPress={this.goToSetting.bind(this)}>
                             <Left>
                                 <Icon name="settings" style={{ color: '#0A69FE' }} />
                                 <Text style={styles.menu}>Settings</Text>
                             </Left>
                             <Body />
                         </ListItem>
-                        <ListItem>
+                        <ListItem onPress={this.logoutFunction.bind(this)}>
                             <Left>
                                 <Icon name="md-log-out" style={{ color: '#0A69FE' }} />
                                 <Text style={styles.menu}>Logout</Text>
